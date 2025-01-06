@@ -1,0 +1,4 @@
+.spyproject
+/data/
+/__pycache__/
+*.ini

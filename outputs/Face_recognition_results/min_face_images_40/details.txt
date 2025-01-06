@@ -1,0 +1,4 @@
+min_face_images: 40
+selected_person: [1, 12, 19, 2, 22, 3, 4, 5, 7]
+Intruder: [10, 11, 13, 14, 15, 16, 17, 18, 20, 21, 23, 24, 25, 26, 6, 8, 9]
+Intruder min score: 102.26731817889471
