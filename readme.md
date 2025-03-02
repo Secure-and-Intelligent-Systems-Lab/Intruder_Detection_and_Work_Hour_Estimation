@@ -23,11 +23,11 @@ you get ```./data/videos/dirxxxxx``` sub-directories.
 ### 3. Experiment
 Run ```main.py``` file for the experiments. There are three type of tasks for the experiment: 'face_detection', 'crew_recognition', and 'work_hour_estimation'.
 
-# 'face_detection':
+#### 'face_detection':
 It is used to detect and crop the faces from the video video dataset. Then we manually labeled each faces with a crew id. You do not need to do this experiment, as we already provided these files in ```./data/face_photos/unsplit_data```.
-# 'crew_recognition':
+#### 'crew_recognition':
 Experiment to recognize the crew members and to detect the intruders.
-# 'work_hour_estimation':
+#### 'work_hour_estimation':
 Experiment for estimating the work hours of the crew memebers.
 
 ### Contact
