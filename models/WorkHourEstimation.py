@@ -77,10 +77,12 @@ class PersonDataStream:
         return timestamp_dic
     
     
-    def work_hour_estimate(self):
-        timestampinfo = self.run()
-        timestampinfo = pd.read_csv(os.path.join(self.dir_timestamp, 'timestamp_{}_{}.csv'.format(self.args.score_threshold, 
-                                                                                                  self.skip_frames)))
+    def work_hour_estimate(self, run = True):
+        if run:
+            timestampinfo = self.run()
+        else:
+            timestampinfo = pd.read_csv(os.path.join(self.dir_timestamp, 
+                                                     'timestamp_{}_{}.csv'.format(self.args.score_threshold, self.skip_frames)))
         # intruder removing
         data = timestampinfo[timestampinfo['score']< self.intruder_min_score]
         data['timestamp'] = pd.to_datetime(data['timestamp'])
@@ -114,20 +116,20 @@ class PersonDataStream:
         df_transposed = df_transposed.loc[[1, 12]] # selecting person
         
         plt.figure(figsize=(15, 6))
-        binary_cmap = ListedColormap(["lightyellow", "green"])
+        binary_cmap = ListedColormap(["#FFF8DC", "#4682B4"]) # ListedColormap(["lightyellow", "green"])
         sns.heatmap(df_transposed, cmap = binary_cmap, cbar = False) #cbar_kws={'label': 'Presence (1=Present, 0=Absent)'})
-        legend_labels = [mpatches.Patch(color = "lightyellow", label = "0 (Absent)"), 
-                         mpatches.Patch(color = "green", label = "1 (Present)")
+        legend_labels = [mpatches.Patch(color = "#FFF8DC", label = "0 (Absent)"), 
+                         mpatches.Patch(color = "#4682B4", label = "1 (Present)")
                          ]
         plt.legend(handles = legend_labels, title = "Legend", bbox_to_anchor = (0.9, 1), loc = 'upper left')
 
         plt.title("Hourly Presence Timeline")
-        plt.ylabel("Crew")
+        plt.ylabel("Crew ID")
         plt.xlabel("Time (Date and Hour)")
         plt.xticks(rotation=90)
         plt.tight_layout()
         plt.show()
-        plt.close('all')
+        # plt.close('all')
         return
         
     

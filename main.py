@@ -53,7 +53,7 @@ if __name__ == '__main__':
     elif args.task == 'work_hour_estimation':
         # ############## WORK HOUR ESTIMATION #####################
         PDS = PersonDataStream(args)
-        PDS.work_hour_estimate()
+        PDS.work_hour_estimate(run = True)
     
 
     
