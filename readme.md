@@ -3,7 +3,14 @@
 
 
 ```bibtex
-(will be added soon)
+@InProceedings{Murad_2025_WACV,
+    author    = {Murad, Md Mahmuddun Nabi and Turgut, Bora San and Ahmed, Awwab and Camliyurt, Gokhan and Yilmaz, Yasin},
+    title     = {Camera-based Intruder Detection and Monitoring of Ship Crew Work Hours},
+    booktitle = {Proceedings of the Winter Conference on Applications of Computer Vision (WACV) Workshops},
+    month     = {February},
+    year      = {2025},
+    pages     = {1526-1534}
+}
 ```
 
 ## Get started
